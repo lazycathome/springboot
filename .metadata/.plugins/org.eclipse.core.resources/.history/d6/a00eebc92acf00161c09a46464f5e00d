@@ -1,0 +1,5 @@
+package cn.bigdb.service;
+
+public class UserService {
+
+}

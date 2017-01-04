@@ -1,0 +1,352 @@
+2016-12-31 14:40:43,643 ERROR [Worker-0] - Statistics - Statistics file `/Users/ZM/.scalaide/statistics` is corrupted. A new one is being created. Corrupted content was:
+
+com.cedarsoftware.util.io.JsonIoException: error parsing JSON value
+	at com.cedarsoftware.util.io.JsonReader.readObject(JsonReader.java:529)
+	at com.cedarsoftware.util.io.JsonReader.jsonToJava(JsonReader.java:289)
+	at com.cedarsoftware.util.io.JsonReader.jsonToJava(JsonReader.java:262)
+	at org.scalaide.core.internal.statistics.Statistics.org$scalaide$core$internal$statistics$Statistics$$read(Statistics.scala:74)
+	at org.scalaide.core.internal.statistics.Statistics$$anonfun$readStats$1.apply(Statistics.scala:52)
+	at org.scalaide.core.internal.statistics.Statistics$$anonfun$readStats$1.apply(Statistics.scala:51)
+	at org.scalaide.core.ScalaIdeDataStore$$anonfun$validate$2.apply(ScalaIdeDataStore.scala:59)
+	at org.scalaide.util.eclipse.EclipseUtils$$anon$3.run(EclipseUtils.scala:214)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.scalaide.util.eclipse.EclipseUtils$.withSafeRunner(EclipseUtils.scala:210)
+	at org.scalaide.core.ScalaIdeDataStore$.validate(ScalaIdeDataStore.scala:58)
+	at org.scalaide.core.internal.statistics.Statistics.readStats(Statistics.scala:51)
+	at org.scalaide.core.internal.statistics.Statistics.<init>(Statistics.scala:30)
+	at org.scalaide.core.internal.ScalaPlugin.stats$lzycompute(ScalaPlugin.scala:135)
+	at org.scalaide.core.internal.ScalaPlugin.stats(ScalaPlugin.scala:135)
+	at org.scalaide.core.internal.ScalaPlugin.statistics(ScalaPlugin.scala:138)
+	at org.scalaide.core.internal.ScalaPlugin.start(ScalaPlugin.scala:109)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:771)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:764)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:721)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:936)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:319)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:571)
+	at org.eclipse.osgi.container.Module.start(Module.java:439)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:454)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:531)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:324)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:311)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:386)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:336)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:328)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:568)
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
+	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
+	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
+	at org.eclipse.ui.internal.WorkbenchPlugin$1.run(WorkbenchPlugin.java:294)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:52)
+	at org.eclipse.ui.internal.WorkbenchPlugin.createExtension(WorkbenchPlugin.java:289)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition$1.run(LightweightDecoratorDefinition.java:125)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:867)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.internalGetDecorator(LightweightDecoratorDefinition.java:120)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:255)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:83)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:367)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:349)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.ensureResultCached(DecorationScheduler.java:372)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:332)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: com.cedarsoftware.util.io.JsonIoException: EOF reached prematurely
+	at com.cedarsoftware.util.io.JsonParser.error(JsonParser.java:584)
+	at com.cedarsoftware.util.io.JsonParser.readValue(JsonParser.java:278)
+	at com.cedarsoftware.util.io.JsonReader.readObject(JsonReader.java:521)
+	... 55 more
+2016-12-31 14:41:23,891 ERROR [main] - System.err - Warning: NLS unused message: Advanced_options_19 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,892 ERROR [main] - System.err - Warning: NLS unused message: After_configuring_the_project__1 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,892 ERROR [main] - System.err - Warning: NLS unused message: AnnotateOperation_4 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,892 ERROR [main] - System.err - Warning: NLS unused message: AnnotateOperation_QDAnnotateMessage in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,892 ERROR [main] - System.err - Warning: NLS unused message: AnnotateOperation_QDAnnotateTitle in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,893 ERROR [main] - System.err - Warning: NLS unused message: Automatically_import_the_local_resources_into_the_repository_3 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,893 ERROR [main] - System.err - Warning: NLS unused message: CVSChangeSetCollector_0 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,893 ERROR [main] - System.err - Warning: NLS unused message: CVSChangeSetCollector_4 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,894 ERROR [main] - System.err - Warning: NLS unused message: CommitCommentArea_0 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,894 ERROR [main] - System.err - Warning: NLS unused message: CommitCommentArea_1 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,894 ERROR [main] - System.err - Warning: NLS unused message: CommitCommentArea_2 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,894 ERROR [main] - System.err - Warning: NLS unused message: CommitCommentArea_3 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,894 ERROR [main] - System.err - Warning: NLS unused message: CommitCommentArea_4 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,894 ERROR [main] - System.err - Warning: NLS unused message: CommitCommentArea_5 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,894 ERROR [main] - System.err - Warning: NLS unused message: CommitCommentArea_6 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,894 ERROR [main] - System.err - Warning: NLS unused message: CommitSetDialog_0 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,894 ERROR [main] - System.err - Warning: NLS unused message: CommitSetDialog_2 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,895 ERROR [main] - System.err - Warning: NLS unused message: CommitSetDialog_3 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,895 ERROR [main] - System.err - Warning: NLS unused message: ConfigureTagsFromRepoViewConfigure_Tag_Error_1 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,895 ERROR [main] - System.err - Warning: NLS unused message: Configure_the_options_used_for_the_SVN_diff_command_20 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,895 ERROR [main] - System.err - Warning: NLS unused message: Context_14 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,895 ERROR [main] - System.err - Warning: NLS unused message: Do_nothing_5 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,895 ERROR [main] - System.err - Warning: NLS unused message: Example__1 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,895 ERROR [main] - System.err - Warning: NLS unused message: ExtMethodPreferencePage_Add_Variable in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,896 ERROR [main] - System.err - Warning: NLS unused message: ExtMethodPreferencePage_Browse in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,896 ERROR [main] - System.err - Warning: NLS unused message: ExtMethodPreferencePage_Details in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,896 ERROR [main] - System.err - Warning: NLS unused message: ExtMethodPreferencePage_SVN_SERVER__7 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,896 ERROR [main] - System.err - Warning: NLS unused message: ExtMethodPreferencePage_message in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,896 ERROR [main] - System.err - Warning: NLS unused message: Icon_Overlays_24 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,897 ERROR [main] - System.err - Warning: NLS unused message: OpenChangeSetAction_0 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,897 ERROR [main] - System.err - Warning: NLS unused message: OpenChangeSetAction_1 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,897 ERROR [main] - System.err - Warning: NLS unused message: OpenCommitSetAction_20 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,897 ERROR [main] - System.err - Warning: NLS unused message: OpenCommitSetAction_21 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,897 ERROR [main] - System.err - Warning: NLS unused message: Open_the_Synchronize_view_on_the_project_2 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,898 ERROR [main] - System.err - Warning: NLS unused message: Run_update_4 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,898 ERROR [main] - System.err - Warning: NLS unused message: S&how_is_added_27 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,898 ERROR [main] - System.err - Warning: NLS unused message: SVNConflicts in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,899 ERROR [main] - System.err - Warning: NLS unused message: Sho&w_outgoing_25 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,899 ERROR [main] - System.err - Warning: NLS unused message: Show_has_&remote_26 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,899 ERROR [main] - System.err - Warning: NLS unused message: Standard_15 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,900 ERROR [main] - System.err - Warning: NLS unused message: UpdateMergeActionProblems_merging_remote_resources_into_workspace_1 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,900 ERROR [main] - System.err - Warning: NLS unused message: UpdateMergeActionProblems_merging_remote_resources_into_workspace_2 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,900 ERROR [main] - System.err - Warning: NLS unused message: Validate_Connection_on_Finish_7 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,900 ERROR [main] - System.err - Warning: NLS unused message: WorkspaceChangeSetCapability_1 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,900 ERROR [main] - System.err - Warning: NLS unused message: WorkspaceChangeSetCapability_2 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,900 ERROR [main] - System.err - Warning: NLS unused message: WorkspaceChangeSetCapability_3 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,900 ERROR [main] - System.err - Warning: NLS unused message: WorkspaceChangeSetCapability_7 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,900 ERROR [main] - System.err - Warning: NLS unused message: WorkspaceChangeSetCapability_8 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,900 ERROR [main] - System.err - Warning: NLS unused message: WorkspaceSubscriberContext_0 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,900 ERROR [main] - System.err - Warning: NLS unused message: buildError in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,900 ERROR [main] - System.err - Warning: NLS unused message: confirmOverwrite in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,900 ERROR [main] - System.err - Warning: NLS unused message: confirmOverwriteTitle in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,900 ERROR [main] - System.err - Warning: NLS unused message: currentRevision in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,900 ERROR [main] - System.err - Warning: NLS unused message: details in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,900 ERROR [main] - System.err - Warning: NLS unused message: error in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,900 ERROR [main] - System.err - Warning: NLS unused message: exception in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,900 ERROR [main] - System.err - Warning: NLS unused message: flag_indicating_that_the_folder_has_a_child_resource_with_outgoing_changes_41 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,900 ERROR [main] - System.err - Warning: NLS unused message: information in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,900 ERROR [main] - System.err - Warning: NLS unused message: internal in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,900 ERROR [main] - System.err - Warning: NLS unused message: keyword_substitution_rule_for_the_resource_44 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,900 ERROR [main] - System.err - Warning: NLS unused message: localChanges in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,901 ERROR [main] - System.err - Warning: NLS unused message: nameAndRevision in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,901 ERROR [main] - System.err - Warning: NLS unused message: no in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,901 ERROR [main] - System.err - Warning: NLS unused message: noauthor in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,901 ERROR [main] - System.err - Warning: NLS unused message: notAvailable in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,901 ERROR [main] - System.err - Warning: NLS unused message: ok in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,901 ERROR [main] - System.err - Warning: NLS unused message: prompt in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,901 ERROR [main] - System.err - Warning: NLS unused message: question in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,901 ERROR [main] - System.err - Warning: NLS unused message: repository_home_directory_on_server_39 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,901 ERROR [main] - System.err - Warning: NLS unused message: root_relative_directory_40 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,901 ERROR [main] - System.err - Warning: NLS unused message: separator in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,901 ERROR [main] - System.err - Warning: NLS unused message: simpleInternal in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,901 ERROR [main] - System.err - Warning: NLS unused message: svn in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,901 ERROR [main] - System.err - Warning: NLS unused message: the_repository_location__s_hostname_36 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,901 ERROR [main] - System.err - Warning: NLS unused message: the_tag_applied_to_the_resource_(version,_branch,_or_date)_35 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,901 ERROR [main] - System.err - Warning: NLS unused message: the_tag_applied_to_the_resource_43 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,901 ERROR [main] - System.err - Warning: NLS unused message: user_name_for_the_connection_38 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,901 ERROR [main] - System.err - Warning: NLS unused message: yes in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,904 ERROR [main] - System.err - Warning: NLS unused message: browse in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 14:41:23,905 ERROR [main] - System.err - Warning: NLS unused message: S&how_is_added_moved in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 18:19:17,734 ERROR [Worker-0] - Statistics - Statistics file `/Users/ZM/.scalaide/statistics` is corrupted. A new one is being created. Corrupted content was:
+
+com.cedarsoftware.util.io.JsonIoException: error parsing JSON value
+	at com.cedarsoftware.util.io.JsonReader.readObject(JsonReader.java:529)
+	at com.cedarsoftware.util.io.JsonReader.jsonToJava(JsonReader.java:289)
+	at com.cedarsoftware.util.io.JsonReader.jsonToJava(JsonReader.java:262)
+	at org.scalaide.core.internal.statistics.Statistics.org$scalaide$core$internal$statistics$Statistics$$read(Statistics.scala:74)
+	at org.scalaide.core.internal.statistics.Statistics$$anonfun$readStats$1.apply(Statistics.scala:52)
+	at org.scalaide.core.internal.statistics.Statistics$$anonfun$readStats$1.apply(Statistics.scala:51)
+	at org.scalaide.core.ScalaIdeDataStore$$anonfun$validate$2.apply(ScalaIdeDataStore.scala:59)
+	at org.scalaide.util.eclipse.EclipseUtils$$anon$3.run(EclipseUtils.scala:214)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.scalaide.util.eclipse.EclipseUtils$.withSafeRunner(EclipseUtils.scala:210)
+	at org.scalaide.core.ScalaIdeDataStore$.validate(ScalaIdeDataStore.scala:58)
+	at org.scalaide.core.internal.statistics.Statistics.readStats(Statistics.scala:51)
+	at org.scalaide.core.internal.statistics.Statistics.<init>(Statistics.scala:30)
+	at org.scalaide.core.internal.ScalaPlugin.stats$lzycompute(ScalaPlugin.scala:135)
+	at org.scalaide.core.internal.ScalaPlugin.stats(ScalaPlugin.scala:135)
+	at org.scalaide.core.internal.ScalaPlugin.statistics(ScalaPlugin.scala:138)
+	at org.scalaide.core.internal.ScalaPlugin.start(ScalaPlugin.scala:109)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:771)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:764)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:721)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:936)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:319)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:571)
+	at org.eclipse.osgi.container.Module.start(Module.java:439)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:454)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:531)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:324)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:311)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:386)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:336)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:328)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:568)
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
+	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
+	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
+	at org.eclipse.ui.internal.WorkbenchPlugin$1.run(WorkbenchPlugin.java:294)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:52)
+	at org.eclipse.ui.internal.WorkbenchPlugin.createExtension(WorkbenchPlugin.java:289)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition$1.run(LightweightDecoratorDefinition.java:125)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:867)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.internalGetDecorator(LightweightDecoratorDefinition.java:120)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:255)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:83)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:367)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:349)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.ensureResultCached(DecorationScheduler.java:372)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:332)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: com.cedarsoftware.util.io.JsonIoException: EOF reached prematurely
+	at com.cedarsoftware.util.io.JsonParser.error(JsonParser.java:584)
+	at com.cedarsoftware.util.io.JsonParser.readValue(JsonParser.java:278)
+	at com.cedarsoftware.util.io.JsonReader.readObject(JsonReader.java:521)
+	... 55 more
+2016-12-31 22:39:46,904 ERROR [main] - System.err - Warning: NLS unused message: Advanced_options_19 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,904 ERROR [main] - System.err - Warning: NLS unused message: After_configuring_the_project__1 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,905 ERROR [main] - System.err - Warning: NLS unused message: AnnotateOperation_4 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,905 ERROR [main] - System.err - Warning: NLS unused message: AnnotateOperation_QDAnnotateMessage in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,905 ERROR [main] - System.err - Warning: NLS unused message: AnnotateOperation_QDAnnotateTitle in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,905 ERROR [main] - System.err - Warning: NLS unused message: Automatically_import_the_local_resources_into_the_repository_3 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,905 ERROR [main] - System.err - Warning: NLS unused message: CVSChangeSetCollector_0 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,905 ERROR [main] - System.err - Warning: NLS unused message: CVSChangeSetCollector_4 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,905 ERROR [main] - System.err - Warning: NLS unused message: CommitCommentArea_0 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,905 ERROR [main] - System.err - Warning: NLS unused message: CommitCommentArea_1 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,906 ERROR [main] - System.err - Warning: NLS unused message: CommitCommentArea_2 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,906 ERROR [main] - System.err - Warning: NLS unused message: CommitCommentArea_3 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,906 ERROR [main] - System.err - Warning: NLS unused message: CommitCommentArea_4 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,906 ERROR [main] - System.err - Warning: NLS unused message: CommitCommentArea_5 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,906 ERROR [main] - System.err - Warning: NLS unused message: CommitCommentArea_6 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,906 ERROR [main] - System.err - Warning: NLS unused message: CommitSetDialog_0 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,906 ERROR [main] - System.err - Warning: NLS unused message: CommitSetDialog_2 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,906 ERROR [main] - System.err - Warning: NLS unused message: CommitSetDialog_3 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,906 ERROR [main] - System.err - Warning: NLS unused message: ConfigureTagsFromRepoViewConfigure_Tag_Error_1 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,906 ERROR [main] - System.err - Warning: NLS unused message: Configure_the_options_used_for_the_SVN_diff_command_20 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,906 ERROR [main] - System.err - Warning: NLS unused message: Context_14 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,906 ERROR [main] - System.err - Warning: NLS unused message: Do_nothing_5 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,906 ERROR [main] - System.err - Warning: NLS unused message: Example__1 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,907 ERROR [main] - System.err - Warning: NLS unused message: ExtMethodPreferencePage_Add_Variable in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,907 ERROR [main] - System.err - Warning: NLS unused message: ExtMethodPreferencePage_Browse in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,907 ERROR [main] - System.err - Warning: NLS unused message: ExtMethodPreferencePage_Details in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,907 ERROR [main] - System.err - Warning: NLS unused message: ExtMethodPreferencePage_SVN_SERVER__7 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,907 ERROR [main] - System.err - Warning: NLS unused message: ExtMethodPreferencePage_message in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,907 ERROR [main] - System.err - Warning: NLS unused message: Icon_Overlays_24 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,908 ERROR [main] - System.err - Warning: NLS unused message: OpenChangeSetAction_0 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,908 ERROR [main] - System.err - Warning: NLS unused message: OpenChangeSetAction_1 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,908 ERROR [main] - System.err - Warning: NLS unused message: OpenCommitSetAction_20 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,908 ERROR [main] - System.err - Warning: NLS unused message: OpenCommitSetAction_21 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,908 ERROR [main] - System.err - Warning: NLS unused message: Open_the_Synchronize_view_on_the_project_2 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,909 ERROR [main] - System.err - Warning: NLS unused message: Run_update_4 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,909 ERROR [main] - System.err - Warning: NLS unused message: S&how_is_added_27 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,909 ERROR [main] - System.err - Warning: NLS unused message: SVNConflicts in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,910 ERROR [main] - System.err - Warning: NLS unused message: Sho&w_outgoing_25 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,910 ERROR [main] - System.err - Warning: NLS unused message: Show_has_&remote_26 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,910 ERROR [main] - System.err - Warning: NLS unused message: Standard_15 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,911 ERROR [main] - System.err - Warning: NLS unused message: UpdateMergeActionProblems_merging_remote_resources_into_workspace_1 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,911 ERROR [main] - System.err - Warning: NLS unused message: UpdateMergeActionProblems_merging_remote_resources_into_workspace_2 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,911 ERROR [main] - System.err - Warning: NLS unused message: Validate_Connection_on_Finish_7 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,911 ERROR [main] - System.err - Warning: NLS unused message: WorkspaceChangeSetCapability_1 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,911 ERROR [main] - System.err - Warning: NLS unused message: WorkspaceChangeSetCapability_2 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,911 ERROR [main] - System.err - Warning: NLS unused message: WorkspaceChangeSetCapability_3 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,911 ERROR [main] - System.err - Warning: NLS unused message: WorkspaceChangeSetCapability_7 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,911 ERROR [main] - System.err - Warning: NLS unused message: WorkspaceChangeSetCapability_8 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,911 ERROR [main] - System.err - Warning: NLS unused message: WorkspaceSubscriberContext_0 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,911 ERROR [main] - System.err - Warning: NLS unused message: buildError in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,911 ERROR [main] - System.err - Warning: NLS unused message: confirmOverwrite in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,911 ERROR [main] - System.err - Warning: NLS unused message: confirmOverwriteTitle in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,911 ERROR [main] - System.err - Warning: NLS unused message: currentRevision in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,911 ERROR [main] - System.err - Warning: NLS unused message: details in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,911 ERROR [main] - System.err - Warning: NLS unused message: error in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,912 ERROR [main] - System.err - Warning: NLS unused message: exception in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,912 ERROR [main] - System.err - Warning: NLS unused message: flag_indicating_that_the_folder_has_a_child_resource_with_outgoing_changes_41 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,912 ERROR [main] - System.err - Warning: NLS unused message: information in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,912 ERROR [main] - System.err - Warning: NLS unused message: internal in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,912 ERROR [main] - System.err - Warning: NLS unused message: keyword_substitution_rule_for_the_resource_44 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,912 ERROR [main] - System.err - Warning: NLS unused message: localChanges in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,912 ERROR [main] - System.err - Warning: NLS unused message: nameAndRevision in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,912 ERROR [main] - System.err - Warning: NLS unused message: no in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,912 ERROR [main] - System.err - Warning: NLS unused message: noauthor in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,912 ERROR [main] - System.err - Warning: NLS unused message: notAvailable in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,912 ERROR [main] - System.err - Warning: NLS unused message: ok in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,912 ERROR [main] - System.err - Warning: NLS unused message: prompt in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,912 ERROR [main] - System.err - Warning: NLS unused message: question in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,912 ERROR [main] - System.err - Warning: NLS unused message: repository_home_directory_on_server_39 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,912 ERROR [main] - System.err - Warning: NLS unused message: root_relative_directory_40 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,912 ERROR [main] - System.err - Warning: NLS unused message: separator in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,913 ERROR [main] - System.err - Warning: NLS unused message: simpleInternal in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,913 ERROR [main] - System.err - Warning: NLS unused message: svn in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,913 ERROR [main] - System.err - Warning: NLS unused message: the_repository_location__s_hostname_36 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,913 ERROR [main] - System.err - Warning: NLS unused message: the_tag_applied_to_the_resource_(version,_branch,_or_date)_35 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,913 ERROR [main] - System.err - Warning: NLS unused message: the_tag_applied_to_the_resource_43 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,913 ERROR [main] - System.err - Warning: NLS unused message: user_name_for_the_connection_38 in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,913 ERROR [main] - System.err - Warning: NLS unused message: yes in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,915 ERROR [main] - System.err - Warning: NLS unused message: browse in: org.tigris.subversion.subclipse.ui.messages
+2016-12-31 22:39:46,916 ERROR [main] - System.err - Warning: NLS unused message: S&how_is_added_moved in: org.tigris.subversion.subclipse.ui.messages
+2017-01-02 12:04:41,189 ERROR [Worker-2] - Statistics - Statistics file `/Users/ZM/.scalaide/statistics` is corrupted. A new one is being created. Corrupted content was:
+
+com.cedarsoftware.util.io.JsonIoException: error parsing JSON value
+	at com.cedarsoftware.util.io.JsonReader.readObject(JsonReader.java:529)
+	at com.cedarsoftware.util.io.JsonReader.jsonToJava(JsonReader.java:289)
+	at com.cedarsoftware.util.io.JsonReader.jsonToJava(JsonReader.java:262)
+	at org.scalaide.core.internal.statistics.Statistics.org$scalaide$core$internal$statistics$Statistics$$read(Statistics.scala:74)
+	at org.scalaide.core.internal.statistics.Statistics$$anonfun$readStats$1.apply(Statistics.scala:52)
+	at org.scalaide.core.internal.statistics.Statistics$$anonfun$readStats$1.apply(Statistics.scala:51)
+	at org.scalaide.core.ScalaIdeDataStore$$anonfun$validate$2.apply(ScalaIdeDataStore.scala:59)
+	at org.scalaide.util.eclipse.EclipseUtils$$anon$3.run(EclipseUtils.scala:214)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.scalaide.util.eclipse.EclipseUtils$.withSafeRunner(EclipseUtils.scala:210)
+	at org.scalaide.core.ScalaIdeDataStore$.validate(ScalaIdeDataStore.scala:58)
+	at org.scalaide.core.internal.statistics.Statistics.readStats(Statistics.scala:51)
+	at org.scalaide.core.internal.statistics.Statistics.<init>(Statistics.scala:30)
+	at org.scalaide.core.internal.ScalaPlugin.stats$lzycompute(ScalaPlugin.scala:135)
+	at org.scalaide.core.internal.ScalaPlugin.stats(ScalaPlugin.scala:135)
+	at org.scalaide.core.internal.ScalaPlugin.statistics(ScalaPlugin.scala:138)
+	at org.scalaide.core.internal.ScalaPlugin.start(ScalaPlugin.scala:109)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:771)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:764)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:721)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:936)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:319)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:571)
+	at org.eclipse.osgi.container.Module.start(Module.java:439)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:454)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:531)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:324)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:311)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:386)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:336)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:328)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:568)
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
+	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
+	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
+	at org.eclipse.ui.internal.WorkbenchPlugin$1.run(WorkbenchPlugin.java:294)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:52)
+	at org.eclipse.ui.internal.WorkbenchPlugin.createExtension(WorkbenchPlugin.java:289)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition$1.run(LightweightDecoratorDefinition.java:125)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:867)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.internalGetDecorator(LightweightDecoratorDefinition.java:120)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:255)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:83)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:367)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:349)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.ensureResultCached(DecorationScheduler.java:372)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:332)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: com.cedarsoftware.util.io.JsonIoException: EOF reached prematurely
+	at com.cedarsoftware.util.io.JsonParser.error(JsonParser.java:584)
+	at com.cedarsoftware.util.io.JsonParser.readValue(JsonParser.java:278)
+	at com.cedarsoftware.util.io.JsonReader.readObject(JsonReader.java:521)
+	... 55 more

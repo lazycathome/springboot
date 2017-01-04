@@ -1,0 +1,24 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>cn.bigdb</groupId>
+  <artifactId>example</artifactId>
+  <version>0.0.1</version>
+  <packaging>pom</packaging>
+  <modules>
+  	<module>first</module>
+  	<module>retrofit</module>
+  </modules>
+  
+  <!-- 
+         引入spring-boot-starter-parent做parent是最好的方式，
+         但是有时我们可能要引入我们自己的parent，此时解决方式有两种：
+         1）我们自己的parent的pom.xml的parent设为spring-boot-starter-parent（没有做过验证，但是感觉可行）
+         2）使用springboot文档中的方式:见spring-boot-1.2.5-reference.pdf的第13页
+    -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>"/Users/ZM/dev/apache-maven-3.3.9/conf/settings.xml"
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.4.3.RELEASE</version>
+    </parent>
+  
+</project>

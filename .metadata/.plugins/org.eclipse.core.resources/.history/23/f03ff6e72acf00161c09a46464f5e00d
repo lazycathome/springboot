@@ -1,0 +1,5 @@
+package cn.bigdb.controller;
+
+public class UserController {
+
+}
