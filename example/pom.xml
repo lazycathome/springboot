@@ -1,4 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+﻿<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>cn.bigdb</groupId>
   <artifactId>example</artifactId>
@@ -16,7 +16,7 @@
          2）使用springboot文档中的方式:见spring-boot-1.2.5-reference.pdf的第13页
     -->
     <parent>
-        <groupId>org.springframework.boot</groupId>"/Users/ZM/dev/apache-maven-3.3.9/conf/settings.xml"
+        <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>1.4.3.RELEASE</version>
     </parent>
