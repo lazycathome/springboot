@@ -1,6 +1,7 @@
 package cn.bigdb.entity;
 
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
@@ -17,10 +18,10 @@ import org.springframework.stereotype.Component;
 @ConfigurationProperties(prefix="user")
 public class User {
     
-    //@Value("${user.id}")
+    @Value("${user.id}")
     private int id;
     
-    //@Value("wangna")
+    @Value("wangna")
     private String username;
     
     private String password;

@@ -39,6 +39,7 @@ public class UserController {
     })
     @RequestMapping(value="/getUser",method=RequestMethod.GET)
     public User getUser() {
+//    	System.out.println("test");
         return userService.getUser();
     }
 
