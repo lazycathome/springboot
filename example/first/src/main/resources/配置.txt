@@ -1,0 +1,81 @@
+代码从开发到测试要经过各种环境,开发环境,测试环境,demo环境,线上环境,各种环境的配置都不一样,同时要方便各种角色如运维,接口测试, 功能测试,全链路测试的配置,hardcode 肯定不合适,如Spring profile一样写在jar包不合适.分布式应用中一般采用集中管理配置的方式,通过使用开源软件,如阿里的diamond,netflix的consul等等,SpringBoot中提供了各种各样的配置方式,下面一一来分析下.
+
+1.配置方式和优先级
+这些方式优先级如下：
+a. 命令行参数
+b. 来自java:comp/env的JNDI属性
+c. Java系统属性（System.getProperties()）
+d. 操作系统环境变量
+e. RandomValuePropertySource配置的random.*属性值
+f. jar外部的application-{profile}.properties或application.yml(带spring.profile)配置文件
+g. jar内部的application-{profile}.properties或application.yml(带spring.profile)配置文件
+h. jar外部的application.properties或application.yml(不带spring.profile)配置文件
+i. jar内部的application.properties或application.yml(不带spring.profile)配置文件
+j. @Configuration注解类上的@PropertySource
+k. 通过SpringApplication.setDefaultProperties指定的默认属性
+
+2.命令行参数
+@Componentpublic 
+class UserProperties {  
+    @Value("${myname}")  
+    private  String myname;
+}
+启动命令: java -jar *.jar --myname="KevinSun"
+其他java 系统属性， 操作系统属性都是类似处理方案如果不想通过命令行启动 可以用下面方法取消.
+
+SpringApplication.setAddCommandLineProperties(false);
+3. application-{profile}.properties参数加载
+不同的环境可能需要不同配置,可以通过
+application{profile}.properties来解决这个问题.
+首先:新建application-dev..properties 文件,增加需要参数其次启动命令:
+
+  java -jar  ***.jar  --spring.profiles.active=dev
+application-{profile}.properties 文件和默认的application.properties的加载方式本质是一致的,可以参照4中的内容.需要注意的是:application.properties 会首先被加载.
+
+然后:从application-{profile}.properties中获取替换,所以一些基本固定的值可以写在application.properties, 然后个性化配置写在application-{profile}.properties中。
+
+具体用法参照我的：第十四章 springboot + profile（不同环境读取不同配置）
+
+4.application.properties 参数加载
+SpringBoot中默认的从application.properties文件中加载参数，大量情况下默认是写在这个文件中的.
+a. application.properties 读取的优先级
+i. file:./config/ 当前jar目录的config
+ii. file:./ 当前jar目录
+iii. classpath:/config/ jar包中classpath的 config目录下
+iv. classpath:/ jar包中classpath 路径下
+排列的顺序 就是 加载的优先级，application.properties只会被加载一次
+b. 使用自定义文件
+如果你觉得 application.properties不够酷，你可以定义自己的文件名， 这里也有两种方式
+i. 使用命令
+
+  java -jar  ***.jar --spring.config.name=myproject
+这时就会加载myproject.propertie并且 application.properties不会被加载的.
+ii. 使用命令
+
+ java -jar  ***.jar  spring.config.location=classpath:/myproject.properties
+这种情况下 application.properties也是会被加载，使用方式application-{profile}.properties相同.
+c. 使用${}进行属性占位符替换
+
+spring.data.mongodb.host=192.168.1.1
+spring.data.mongodb.port=1234
+spring.data1.mongodb.host=${spring.data.mongodb.host}_test
+spring.data1.mongodb.port=${spring.data.mongodb.port}_test
+spring.data1.mongodb.database=${random.value}_test
+注意最后一个配置,这使用random 生产随机值的方式, 在测试中可以用来造数据。
+d. 类型安全加载
+使用@value 进行属性的注入有的时候可能比较笨重, spring 提供一种强类型的bean 来替代这种方式
+
+@Configuration
+@EnableConfigurationProperties(UserProperties.class)
+public class MyConfiguration{
+
+}
+@Component
+@ConfigurationProperties(prefix = "spring.data.mongodb")
+public class UserProperties {
+    private  String host;
+    private  int prot;
+
+}
+spring.data.mongodb.host=192.168.1.1
+spring.data.mongodb.port=1234

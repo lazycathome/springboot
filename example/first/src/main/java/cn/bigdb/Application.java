@@ -2,6 +2,7 @@ package cn.bigdb;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
@@ -15,6 +16,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  */
 @SpringBootApplication        //same as @Configuration+@EnableAutoConfiguration+@ComponentScan
 @EnableSwagger2
+@EnableScheduling
 public class Application {
     /**
      * spring boot的入口，在整个子项目在内，
