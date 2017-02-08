@@ -3,7 +3,6 @@ package cn.bigdb.cron;
 import java.util.Date;
 
 import org.apache.commons.lang3.time.DateFormatUtils;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
