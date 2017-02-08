@@ -5,7 +5,7 @@
     <artifactId>example</artifactId>
     <version>0.0.1</version>
   </parent>
-  <artifactId>framework</artifactId>
+  <artifactId>hystrix</artifactId>
   
   <!-- 引入实际依赖 -->
     <dependencies>
@@ -25,7 +25,19 @@
             <artifactId>spring-boot-starter-jetty</artifactId>
         </dependency>
         
+        <dependency>
+            <groupId>com.netflix.hystrix</groupId>
+            <artifactId>hystrix-core</artifactId>
+            <version>1.4.10</version>
+        </dependency>
+        <!-- http://mvnrepository.com/artifact/com.netflix.hystrix/hystrix-metrics-event-stream -->
+        <dependency>
+            <groupId>com.netflix.hystrix</groupId>
+            <artifactId>hystrix-metrics-event-stream</artifactId>
+            <version>1.4.10</version>
+        </dependency>
+        
 	</dependencies>
 	
-	
+  
 </project>

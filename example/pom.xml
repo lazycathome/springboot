@@ -8,6 +8,8 @@
   	<module>first</module>
   	<module>retrofit</module>
   	<module>framework</module>
+  	<module>hystrix</module>
+  	<module>redis-cluster</module>
   </modules>
   
   <!-- 
